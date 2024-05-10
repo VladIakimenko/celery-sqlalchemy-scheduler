@@ -1,5 +1,4 @@
 # Change history
 
-## v0.3.0
-
-- Support Celery 5.0.1
+## v0.4.0
+- Syntax changes, required for sqlalchemy 2.0 support
