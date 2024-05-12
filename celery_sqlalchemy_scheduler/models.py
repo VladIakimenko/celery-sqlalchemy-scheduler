@@ -120,7 +120,7 @@ class CrontabSchedule(ModelBase, ModelMixin):
         }
         if schedule.tz:
             spec.update({
-                'timezone': schedule.tz.zone
+                'timezone': str(schedule.tz)
             })
         model = session.query(CrontabSchedule).filter_by(**spec).first()
         if not model:

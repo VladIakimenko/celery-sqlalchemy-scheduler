@@ -1,5 +1,6 @@
 # coding=utf-8
 """Timezone aware Cron schedule Implementation."""
+from zoneinfo import ZoneInfo
 
 import pytz
 from collections import namedtuple
@@ -30,10 +31,12 @@ class TzAwareCrontab(schedules.crontab):
             nowfun=nowfun, app=app
         )
 
+    # def nowfunc(self):
+    #     return self.tz.normalize(
+    #         pytz.utc.localize(dt.datetime.utcnow())
+    #     )
     def nowfunc(self):
-        return self.tz.normalize(
-            pytz.utc.localize(dt.datetime.utcnow())
-        )
+        return dt.datetime.now(self.tz).astimezone(ZoneInfo("UTC"))
 
     def is_due(self, last_run_at):
         """Calculate when the next run will take place.
