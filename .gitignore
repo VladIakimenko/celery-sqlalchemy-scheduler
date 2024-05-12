@@ -118,3 +118,7 @@ dmypy.json
 *.dat
 *.dir
 .pypirc
+
+# pycharm
+.idea/
+

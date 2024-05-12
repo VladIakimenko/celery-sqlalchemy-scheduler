@@ -1,0 +1,11 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "celery-sqlalchemy-scheduler"
+version = "0.3.0"
+authors = [{name = "AngelLiang", email = "yannanxiu@126.com"}]
+description = "A Scheduler Based SQLalchemy For Celery."
+license = {file="LICENSE"}
+
